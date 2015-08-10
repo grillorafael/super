@@ -1,0 +1,16 @@
+$side-menu-bg: #000;
+$side-menu-color: #FFF;
+$side-menu-width-open: 250px;
+$side-menu-width-closed: 80px;
+
+.super-side-menu {
+    @include disable-user-selection();
+    width: $side-menu-width-open;
+    background-color: $side-menu-bg;
+    color: $side-menu-color;
+
+    transition: width 0.3s ease-in-out;
+    &.closed {
+        width: $side-menu-width-closed;
+    }
+}

@@ -1,0 +1,43 @@
+$side-menu-item-bg: #FF0000;
+
+.super-side-menu {
+    .side-menu-item {
+        @include disable-user-selection();
+        height: 50px;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: 18px;
+        line-height: 30px;
+        transition: background-color 0.3s, border 0.5s;
+
+        h3, ng-transclude {
+            transition: opacity 0.5s;
+        }
+
+        h3 {
+            position: absolute;
+            text-align: center;
+            opacity: 0;
+        }
+
+
+        &:hover {
+            background-color: $side-menu-item-bg;
+        }
+        &.active {
+            border-left: 5px solid $side-menu-item-bg;
+        }
+    }
+
+    &.closed {
+        .side-menu-item {
+            h3 {
+                opacity: 1;
+            }
+            ng-transclude {
+                opacity: 0;
+            }
+        }
+    }
+}

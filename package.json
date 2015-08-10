@@ -1,0 +1,22 @@
+{
+  "name": "super-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css:build": "node-sass --output-style compressed scss/index.scss www/dist/css/application.min.css",
+    "css:watch": "nodemon --watch scss/ www/components/**/*.scss --ext scss --exec 'npm run css:build'",
+    "js:build": "uglifyjs www/components/*.js www/components/**/*.js -o www/dist/js/application.min.js",
+    "js:watch": "nodemon --watch www/components/**/*.js --ext js --exec 'npm run js:build'",
+    "angular:template": "n-embed -m 'super-template' -s www components/**/*.html > www/components/template.js",
+    "watch": "mkdir -p www/dist www/dist/js www/dist/css; parallelshell 'npm run js:watch' 'npm run css:watch'"
+  },
+  "author": "Rafael Grillo Abreu <grillorafael@gmail.com> (http://rgrillo.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.4.0",
+    "npm-build-tools": "^2.1.1",
+    "parallelshell": "^2.0.0",
+    "uglifyjs": "^2.4.10"
+  }
+}
