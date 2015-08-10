@@ -6,3 +6,9 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+@mixin truncate() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

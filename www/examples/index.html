@@ -6,11 +6,13 @@
     <title>Super Theme - Example</title>
 
     <link rel="stylesheet" href="../dist/css/application.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <style media="screen">
         body {
             height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         .content {
@@ -37,14 +39,19 @@
 </head>
 
 <body ng-app="examples">
-    <nav-header></nav-header>
+    <nav-header>
+        <h1>
+            <img src="http://placehold.it/100x100" />
+            Company Name
+        </h1>
+    </nav-header>
     <section flex class="content">
         <side-menu>
             <side-menu-item ng-click='$toggle()' small="=">{{$isOpen() ? "Close" : "Open"}}</side-menu-item>
             <side-menu-item ui-sref-active="active" ui-sref='home' small="H">Home</side-menu-item>
             <side-menu-item ui-sref-active="active" ui-sref='page2' small="P2">Page 2</side-menu-item>
         </side-menu>
-        <div ui-view class="main-view"></div>
+        <div ui-view class="main-view animated fadeIn"></div>
     </section>
     <super-footer class="text-center">
         Commodity Vectors 2015 ®
@@ -65,7 +72,7 @@
                 $stateProvider
                     .state('home', {
                         url: "/",
-                        template: "Test"
+                        templateUrl: "examples/_home.html"
                     })
                     .state('page2', {
                         url: "/page2",

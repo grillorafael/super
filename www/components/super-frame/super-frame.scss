@@ -1,0 +1,22 @@
+.super-frame {
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    position: relative;
+    &.closed {
+        height: 32px;
+    }
+    & > section {
+        margin-top: 30px;
+    }
+    & > header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30px;
+        width: 100%;
+        padding: 5px;
+        background-color: #afafaf;
+    }
+}

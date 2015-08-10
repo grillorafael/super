@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "css:build": "node-sass --output-style compressed scss/index.scss www/dist/css/application.min.css",
+    "css:build": "node-sass --output-style compressed scss/index.scss > postcss --use autoprefixer www/dist/css/application.min.css",
     "css:watch": "nodemon --watch scss/ www/components/**/*.scss --ext scss --exec 'npm run css:build'",
     "js:build": "uglifyjs www/components/*.js www/components/**/*.js -o www/dist/js/application.min.js",
     "js:watch": "nodemon --watch www/components/**/*.js --ext js --exec 'npm run js:build'",
@@ -14,9 +14,11 @@
   "author": "Rafael Grillo Abreu <grillorafael@gmail.com> (http://rgrillo.com)",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^5.2.0",
     "nodemon": "^1.4.0",
     "npm-build-tools": "^2.1.1",
     "parallelshell": "^2.0.0",
+    "postcss-cli": "^1.5.0",
     "uglifyjs": "^2.4.10"
   }
 }

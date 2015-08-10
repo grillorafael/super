@@ -1,4 +1,4 @@
-$side-menu-bg: #000;
+$side-menu-bg: $primary-color;
 $side-menu-color: #FFF;
 $side-menu-width-open: 250px;
 $side-menu-width-closed: 80px;
@@ -10,6 +10,9 @@ $side-menu-width-closed: 80px;
     color: $side-menu-color;
 
     transition: width 0.3s ease-in-out;
+
+    border-top: 2px solid $info-color;
+    border-bottom: 2px solid $info-color;
     &.closed {
         width: $side-menu-width-closed;
     }

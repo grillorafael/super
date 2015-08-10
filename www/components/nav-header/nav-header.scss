@@ -1,4 +1,4 @@
-$nav-header-bg: #000;
+$nav-header-bg: $primary-color;
 $nav-header-color: #FFF;
 
 .super-nav-header {
@@ -6,12 +6,16 @@ $nav-header-color: #FFF;
     width: 100%;
     background-color: $nav-header-bg;
     color: $nav-header-color;
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        li {
-            display: inline;
+    h1 {
+        padding: 5px;
+        height: 60px;
+        font-size: 30px;
+        line-height: 50px;
+        img {
+            height: 100%;
+            width: auto;
+            float: left;
+            margin-right: 10px;
         }
     }
 }
