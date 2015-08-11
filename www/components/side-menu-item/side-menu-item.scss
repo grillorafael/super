@@ -5,28 +5,23 @@ $side-menu-item-bg: $info-color;
         @include disable-user-selection();
         height: 50px;
         padding: 10px;
-        box-sizing: border-box;
         text-align: left;
         font-size: 18px;
         line-height: 30px;
-        transition: background-color 0.3s, border 0.5s;
+        transition: background-color 0.3s, border 0.2s;
+
 
         ng-transclude {
             @include truncate();
             display: block;
         }
-
-        p, ng-transclude {
-            transition: opacity 0.5s;
+        .display-small {
+            display: none;
+            line-height: 30px;
         }
-
-        p {
-            position: absolute;
+        &.text-center {
             text-align: center;
-            opacity: 0;
         }
-
-
         &:hover {
             background-color: $side-menu-item-bg;
         }
@@ -37,11 +32,15 @@ $side-menu-item-bg: $info-color;
 
     &.closed {
         .side-menu-item {
-            p {
-                opacity: 1;
+            text-align: center;
+            .display-small {
+                display: block;
+            }
+            &:before {
+                content: attr(small);
             }
             ng-transclude {
-                opacity: 0;
+                display: none;
             }
         }
     }

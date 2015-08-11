@@ -1,4 +1,5 @@
-<div class="side-menu-item">
-    <p>{{small}}</p>
+<div class="side-menu-item" small="{{small}}">
+
+    <i ng-if='iconSmall' class="{{iconSmall}} display-small"></i>
     <ng-transclude></ng-transclude>
 </div>

@@ -7,7 +7,8 @@
             transclude: true,
             replace: true,
             scope: {
-                small: '@'
+                small: '@',
+                iconSmall: '@'
             },
             templateUrl: 'components/side-menu-item/side-menu-item.html',
             link: function (scope, element, attrs) {

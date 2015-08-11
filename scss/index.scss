@@ -1,25 +1,35 @@
-@import "reset";
 @import "_variables";
 @import "_mixins";
-@import "_typography";
+
 @import "../www/components/nav-header/nav-header.scss";
 @import "../www/components/side-menu/side-menu.scss";
 @import "../www/components/side-menu-item/side-menu-item.scss";
 @import "../www/components/super-footer/super-footer.scss";
-@import "../www/components/super-frame/super-frame.scss";
 
-* {
-    box-sizing: border-box;
-}
-*:before,
-*:after {
-    box-sizing: border-box;
+
+body[full-screen] {
+    height: 100vh;
+    overflow: hidden;
 }
 
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333;
-  background-color: #FFF;
+[flex] {
+    display: flex;
+    flex: 1;
+}
+
+[flex-direction="row"] {
+    flex-direction: row;
+}
+
+[flex-direction="column"] {
+    flex-direction: column;
+}
+
+[ui-view] {
+    width: 100%;
+}
+
+.main-view {
+    padding: 10px;
+    overflow: scroll;
 }

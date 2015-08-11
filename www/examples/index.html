@@ -5,40 +5,13 @@
     <meta charset="utf-8">
     <title>Super Theme - Example</title>
 
-    <link rel="stylesheet" href="../dist/css/application.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
-    <style media="screen">
-        body {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .content {
-            display: flex;
-        }
-
-        [ui-view] {
-            width: 100%;
-        }
-
-        .main-view {
-            padding: 10px;
-            overflow-y: scroll;
-        }
-
-        [flex] {
-            flex: 1;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dist/css/application.min.css">
 </head>
 
-<body ng-app="examples">
+<body ng-app="examples" full-screen flex flex-direction="column">
     <nav-header>
         <h1>
             <img src="http://placehold.it/100x100" />
@@ -47,7 +20,9 @@
     </nav-header>
     <section flex class="content">
         <side-menu>
-            <side-menu-item ng-click='$toggle()' small="=">{{$isOpen() ? "Close" : "Open"}}</side-menu-item>
+            <side-menu-item ng-click='$toggle()' icon-small="fa fa-bars">
+                <i class="fa fa-bars"></i>
+            </side-menu-item>
             <side-menu-item ui-sref-active="active" ui-sref='home' small="H">Home</side-menu-item>
             <side-menu-item ui-sref-active="active" ui-sref='page2' small="P2">Page 2</side-menu-item>
         </side-menu>
@@ -78,7 +53,7 @@
                         url: "/page2",
                         template: "Page 2",
                         controller: function($scope, $rootScope) {
-                            //$rootScope.$broadcast('close menu');
+                            // $rootScope.$broadcast('close menu');
                         }
                     });
             });

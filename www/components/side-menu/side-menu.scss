@@ -9,7 +9,7 @@ $side-menu-width-closed: 80px;
     background-color: $side-menu-bg;
     color: $side-menu-color;
 
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s;
 
     border-top: 2px solid $info-color;
     border-bottom: 2px solid $info-color;
