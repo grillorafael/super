@@ -14,15 +14,24 @@
 <body ng-app="examples" full-screen flex flex-direction="column">
     <nav-header>
         <h1>
-            <img src="http://placehold.it/100x100" />
-            Company Name
+            <img src="http://placehold.it/100x100" /> Company Name
         </h1>
+        <form class="navbar-form" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
     </nav-header>
     <section flex class="content">
         <side-menu>
-            <side-menu-item ng-click='$toggle()' icon-small="fa fa-bars">
+            <!-- <side-menu-item ng-click='$toggle()' icon-small="fa fa-bars">
                 <i class="fa fa-bars"></i>
-            </side-menu-item>
+            </side-menu-item> -->
             <side-menu-item ui-sref-active="active" ui-sref='home' small="H">Home</side-menu-item>
             <side-menu-item ui-sref-active="active" ui-sref='page2' small="P2">Page 2</side-menu-item>
         </side-menu>
@@ -37,11 +46,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-messages.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap-tpls.min.js"></script>
 
 <script src="../dist/js/application.min.js"></script>
 <script type="text/javascript">
     (function() {
-        angular.module("examples", ["super", "ui.router"])
+        angular.module("examples", ["super", "ui.router", "ui.bootstrap"])
             .config(function($stateProvider, $urlRouterProvider) {
                 $urlRouterProvider.otherwise("/");
                 $stateProvider
@@ -51,7 +62,7 @@
                     })
                     .state('page2', {
                         url: "/page2",
-                        template: "Page 2",
+                        templateUrl: "examples/_page2.html",
                         controller: function($scope, $rootScope) {
                             // $rootScope.$broadcast('close menu');
                         }

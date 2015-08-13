@@ -11,8 +11,8 @@ $side-menu-width-closed: 80px;
 
     transition: width 0.3s;
 
-    border-top: 2px solid $info-color;
-    border-bottom: 2px solid $info-color;
+    border-top: 1px solid $info-color;
+    border-bottom: 1px solid $info-color;
     &.closed {
         width: $side-menu-width-closed;
     }
