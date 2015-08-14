@@ -1,18 +1,20 @@
 $side-menu-bg: $primary-color;
-$side-menu-color: #FFF;
+$side-menu-color: #fff;
 $side-menu-width-open: 250px;
 $side-menu-width-closed: 80px;
-
 .super-side-menu {
     @include disable-user-selection();
     width: $side-menu-width-open;
     background-color: $side-menu-bg;
     color: $side-menu-color;
-
     transition: width 0.3s;
-
     border-top: 1px solid $info-color;
     border-bottom: 1px solid $info-color;
+    box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.43);
+    ul {
+        margin: 0;
+        padding: 0;
+    }
     &.closed {
         width: $side-menu-width-closed;
     }

@@ -6,10 +6,13 @@
   "scripts": {
     "css:build": "node-sass --output-style compressed scss/index.scss > postcss --use autoprefixer www/dist/css/application.min.css",
     "css:watch": "gacher -p 'www/components/**/*.scss scss/*.scss' -c 'npm run css:build'",
+
     "js:build": "uglifyjs www/components/*.js www/components/**/*.js -o www/dist/js/application.min.js",
     "js:watch": "gacher -p 'www/components/**/*.js' -c 'npm run js:build'",
+
     "angular:watch": "gacher -p 'www/components/**/*.html' -c 'npm run angular:template'",
     "angular:template": "n-embed -m 'super-template' -s www components/**/*.html > www/components/template.js",
+
     "watch": "mkdir -p www/dist www/dist/js www/dist/css; parallelshell 'npm run js:watch' 'npm run css:watch' 'npm run angular:watch'"
   },
   "author": "Rafael Grillo Abreu <grillorafael@gmail.com> (http://rgrillo.com)",

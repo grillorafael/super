@@ -14,7 +14,7 @@
 <body ng-app="examples" full-screen flex flex-direction="column">
     <nav-header>
         <h1>
-            <img src="http://placehold.it/100x100" /> Company Name
+            <img src="http://placehold.it/100x100" /> GeoMap Test
         </h1>
         <form class="navbar-form" role="search">
             <div class="input-group">
@@ -29,11 +29,40 @@
     </nav-header>
     <section flex class="content">
         <side-menu>
-            <!-- <side-menu-item ng-click='$toggle()' icon-small="fa fa-bars">
+            <side-menu-item ng-click='$toggle()' class="text-center">
                 <i class="fa fa-bars"></i>
-            </side-menu-item> -->
-            <side-menu-item ui-sref-active="active" ui-sref='home' small="H">Home</side-menu-item>
-            <side-menu-item ui-sref-active="active" ui-sref='page2' small="P2">Page 2</side-menu-item>
+            </side-menu-item>
+            <side-menu-item ui-sref-active="active" ui-sref='home'>
+                Home
+            </side-menu-item>
+            <side-menu-item ui-sref-active="active" ui-sref='page2'>
+                Page 2
+            </side-menu-item>
+            <side-menu-item>
+                With Submenu
+                <ul>
+                    <side-menu-item ui-sref-active="active" ui-sref='page3'>
+                        Page 3
+                    </side-menu-item>
+                    <side-menu-item ui-sref-active="active" ui-sref='page4'>
+                        Page 4
+                    </side-menu-item>
+                </ul>
+            </side-menu-item>
+            <side-menu-item ui-sref-active="active" ui-sref='page2'>
+                Page 2
+            </side-menu-item>
+            <side-menu-item>
+                With Submenu
+                <ul>
+                    <side-menu-item ui-sref-active="active" ui-sref='page3'>
+                        Page 3
+                    </side-menu-item>
+                    <side-menu-item ui-sref-active="active" ui-sref='page4'>
+                        Page 4
+                    </side-menu-item>
+                </ul>
+            </side-menu-item>
         </side-menu>
         <div ui-view class="main-view animated fadeIn"></div>
     </section>
@@ -63,6 +92,20 @@
                     .state('page2', {
                         url: "/page2",
                         templateUrl: "examples/_page2.html",
+                        controller: function($scope, $rootScope) {
+                            // $rootScope.$broadcast('close menu');
+                        }
+                    })
+                    .state('page3', {
+                        url: "/page3",
+                        templateUrl: "examples/_page3.html",
+                        controller: function($scope, $rootScope) {
+                            // $rootScope.$broadcast('close menu');
+                        }
+                    })
+                    .state('page4', {
+                        url: "/page4",
+                        templateUrl: "examples/_page4.html",
                         controller: function($scope, $rootScope) {
                             // $rootScope.$broadcast('close menu');
                         }
